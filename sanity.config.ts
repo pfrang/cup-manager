@@ -19,7 +19,7 @@ const title = `Generic ${dataset === "development" ? "Dev" : "Prod"} [v${version
 // Go to https://www.sanity.io/docs/api-versioning to learn how API versioning works
 import { structure } from "./lib/sanity/structure";
 import { envVars } from "./envVars";
-import { apiVersion } from "./lib/sanity/env";
+import { sanityApiVersion } from "./lib/sanity/env";
 import { schemaTypes } from "./lib/sanity/schemaTypes";
 
 export default defineConfig({
@@ -34,6 +34,6 @@ export default defineConfig({
     structureTool({ structure }),
     // Vision is for querying with GROQ from inside the Studio
     // https://www.sanity.io/docs/the-vision-plugin
-    visionTool({ defaultApiVersion: apiVersion }),
+    visionTool({ defaultApiVersion: sanityApiVersion }),
   ],
 });
